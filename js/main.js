@@ -111,7 +111,7 @@ $(document).ready(function() {
         autoplay: true,
         autoplayTimeout: 4000,
         margin: 20,
-        stagePadding: 5,
+        stagePadding: 15,
         rtl: true,
         navText: ["<span class='fa fa-chevron-right'></span>", "<span class='fa fa-chevron-left'></span>"],
         responsiveClass: true,
@@ -130,7 +130,7 @@ $(document).ready(function() {
                 loop: true,
             },
             720: {
-                items: 3,
+                items: 4,
                 dots: true,
                 nav: false,
                 loop: true
@@ -294,12 +294,13 @@ $(document).ready(function() {
         $(".overlay-box3").fadeOut(500);
     });
 
-
-    $(".cats-li .cats-link").click(function() {
-        $(".cats-li .cats-link").toggleClass("rotate");
-        $(".cats-li .sub-list").css("transition", "none");
-        $(".cats-li .sub-list").slideToggle(300);
-    });
+    if ($(window).width() <= 991) {
+        $(".cats-li .cats-link").click(function() {
+            $(".cats-li .cats-link").toggleClass("rotate");
+            $(".cats-li .sub-list").css("transition", "none");
+            $(".cats-li .sub-list").slideToggle(300);
+        });
+    }
 
     $(".config-box .nav-link").click(function() {
         $(".config-box .nav-link .config-name").toggleClass("rotate");
